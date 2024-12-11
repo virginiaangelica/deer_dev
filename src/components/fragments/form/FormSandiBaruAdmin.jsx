@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Eye } from "lucide-react";
 import { useNavigate } from "react-router-dom"; 
 
-export default function FormKataSandiBaru() {
+export default function FormSandiBaruAdmin() {
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState({ newPassword: "", confirmPassword: "" });
@@ -42,7 +42,7 @@ export default function FormKataSandiBaru() {
     setConfirmPassword("");
     setErrors({ newPassword: "", confirmPassword: "" });
 
-    navigate("/login");
+    navigate("/login-admin");
   };
 
   return (

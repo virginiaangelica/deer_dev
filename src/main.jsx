@@ -21,6 +21,17 @@ import KeranjangPage from "./pages/auth/KeranjangPage";
 import CODPage from "./pages/auth/CODPage";
 import BCAPage from "./pages/auth/BCAPage";
 import BCA2Page from "./pages/auth/BCA2Page";
+import HomeAdminPage from "./pages/auth/HomeAdminPage";
+import KelolaPesananPage from "./pages/auth/KelolaPesananPage";
+import KelolaProdukPage from "./pages/auth/KelolaProdukPage";
+import KelolaMemberPage from "./pages/auth/KelolaMemberPage";
+import KelolaPembayaranPage from "./pages/auth/KelolaPembayaranPage";
+import ProfilAdminPage from "./pages/auth/ProfilAdminPage";
+import EditProfilAdminPage from "./pages/auth/EditProfilAdminPage";
+import LoginAdminPage from "./pages/auth/LoginAdminPage";
+import LupaSandiAdminPage from "./pages/auth/LupaSandiAdminPage";
+import SandiBaruAdminPage from "./pages/auth/SandiBaruAdminPage";
+import BatalPesananPage from "./pages/auth/BatalPesananPage";
 
 const router = createBrowserRouter([
   {
@@ -98,6 +109,50 @@ const router = createBrowserRouter([
   {
     path: "/bca2",
     element: <BCA2Page />,
+  },
+  {
+    path: "/home-admin",
+    element: <HomeAdminPage />,
+  },
+  {
+    path: "/kelola-pesanan",
+    element: <KelolaPesananPage />,
+  },
+  {
+    path: "/kelola-produk",
+    element: <KelolaProdukPage />,
+  },
+  {
+    path: "/kelola-member",
+    element: <KelolaMemberPage />,
+  },
+  {
+    path: "/kelola-pembayaran",
+    element: <KelolaPembayaranPage />,
+  },
+  {
+    path: "/profil-admin",
+    element: <ProfilAdminPage />,
+  },
+  {
+    path: "/Editprofil-admin",
+    element: <EditProfilAdminPage />,
+  },
+  {
+    path: "/login-admin",
+    element: <LoginAdminPage />,
+  },
+  {
+    path: "/lupasandi-admin",
+    element: <LupaSandiAdminPage />,
+  },
+  {
+    path: "/sandibaru-admin",
+    element: <SandiBaruAdminPage />,
+  },
+  {
+    path: "/batal-pesanan",
+    element: <BatalPesananPage />,
   },
 ]);
 

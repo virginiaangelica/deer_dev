@@ -48,7 +48,7 @@ export default function FormTambahKeranjang() {
 
       {/* Harga dan Quantity bersebelahan */}
       <div className="flex items-center space-x-32">
-        <p className="text-xl font-bold text-gray-800">Rp 139.000</p>
+        <p className="text-xl font-bold text-gray-800">Rp 135.000</p>
 
         {/* Quantity dan tombol tambah */}
         <div className="flex items-center space-x-5 border border-gray-400 rounded-full px-6 py-2 bg-gray-200">

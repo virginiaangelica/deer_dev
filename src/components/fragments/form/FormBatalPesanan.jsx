@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-export default function FormCOD() {
-  const [activeTab, setActiveTab] = useState("Sedang Dikemas");
+export default function FormBatalPesanan() {
+  const [activeTab, setActiveTab] = useState("Dibatalkan");
   const navigate = useNavigate();
 
   const tabs = [
@@ -25,7 +25,7 @@ export default function FormCOD() {
       quantity: 1,
       total: "Rp 163.000",
       img: "src/assets/kaos3.png",
-      status: "Sedang Dikemas",
+      status: "Dibatalkan",
     },
     {
       name: "Kaos garis double",
@@ -40,8 +40,7 @@ export default function FormCOD() {
   ];
 
   const getTabCount = (tab) => {
-    if (tab === "Semua") return 1;
-    if (tab === "Belum Bayar") return 0;
+    if (tab === "Semua") return orders.length;
     return orders.filter((order) => order.status === tab).length;
   };
 
@@ -85,10 +84,8 @@ export default function FormCOD() {
           {orders
             .filter(
               (order) =>
-                activeTab === "Semua" ||
-                (activeTab !== "Belum Bayar" && order.status === activeTab)
+                activeTab === "Semua" || order.status === activeTab
             )
-            .slice(0, activeTab === "Semua" ? 1 : undefined)
             .map((order, index) => (
               <div
                 key={index}
@@ -117,6 +114,8 @@ export default function FormCOD() {
                     className={`block text-sm font-medium ${
                       order.status === "Belum Bayar"
                         ? "text-red-600"
+                        : order.status === "Dibatalkan"
+                        ? "text-red-600"
                         : "text-green-600"
                     }`}
                   >
@@ -128,15 +127,13 @@ export default function FormCOD() {
                     TOTAL PESANAN : <span className="ml-14">{order.total}</span>
                   </p>
 
-                  {/* Buttons */}
-                  {order.status === "Sedang Dikemas" && (
-                    <button
-                      className="mt-2 px-6 py-2 bg-black text-white text-sm font-bold rounded-lg"
-                      onClick={() => navigate("/batal-pesanan")}
-                    >
-                      BATALKAN PESANAN
-                    </button>
-                  )}
+                  {/* Button Beli Lagi */}
+                  <button
+                    onClick={() => navigate("/tambah-keranjang")}
+                    className="mt-4 px-4 py-2 bg-gray-400 text-white rounded-md hover:bg-black"
+                  >
+                    BELI LAGI
+                  </button>
                 </div>
               </div>
             ))}
@@ -144,8 +141,7 @@ export default function FormCOD() {
           {/* Jika Tidak Ada Pesanan */}
           {orders.filter(
             (order) =>
-              activeTab === "Semua" ||
-              (activeTab !== "Belum Bayar" && order.status === activeTab)
+              activeTab === "Semua" || order.status === activeTab
           ).length === 0 && (
             <div className="text-center py-10 text-gray-500">
               <p>Tidak ada data untuk tab "{activeTab}".</p>

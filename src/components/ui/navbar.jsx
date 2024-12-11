@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav className="w-full bg-white shadow-md px-8 py-1 ml-4 flex items-center justify-between">
+    <nav className="w-full bg-white shadow-md px-8 py-1 fixed top-0 left-0 right-0 z-50 flex items-center justify-between">
       {/* Logo */}
       <div className="flex items-center space-x-2">
         <img src={DeerLogo} alt="Logo Deer Hitam" className="h-20 w-auto" />

@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft } from "lucide-react"; // Mengimpor ikon panah kiri untuk tombol kembali
+import { ArrowLeft } from "lucide-react";
 
 export default function FormBCA2() {
   const [activeTab, setActiveTab] = useState("Sedang Dikemas");
-  const navigate = useNavigate();
+  const navigate = useNavigate(); 
 
   const tabs = [
     "Semua",
@@ -43,11 +42,9 @@ export default function FormBCA2() {
 
   const filterOrders = (tab) => {
     if (tab === "Semua") {
-      // Menampilkan hanya 1 produk baju abu-abu di tab "Semua"
       return orders.filter((order) => order.name === "Kaos kerah bulat");
     }
     if (tab === "Sedang Dikemas") {
-      // Menampilkan hanya 1 produk baju abu-abu di tab "Sedang Dikemas"
       return orders.filter((order) => order.name === "Kaos kerah bulat");
     }
     return orders.filter((order) => order.status === tab);
@@ -129,7 +126,10 @@ export default function FormBCA2() {
                   TOTAL PESANAN : <span className="ml-14">{order.total}</span>
                 </p>
                 {order.status === "Sedang Dikemas" && (
-                  <button className="mt-7 px-6 py-2 bg-black text-white text-sm font-bold rounded-lg">
+                  <button
+                    className="mt-7 px-6 py-2 bg-black text-white text-sm font-bold rounded-lg"
+                    onClick={() => navigate("/batal-pesanan")} 
+                  >
                     BATALKAN PESANAN
                   </button>
                 )}

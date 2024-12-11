@@ -1,14 +1,13 @@
 import { useState } from "react";
-import FormEditProfil from "@/components/fragments/form/FormEditProfil";
+import FormEditProfilAdmin from "@/components/fragments/form/FormEditProfilAdmin";
 import { useNavigate } from "react-router-dom";
-import Footer from "@/components/ui/Footer";
 
-export default function ProfilPage() {
+export default function EditProfilAdminPage() {
   const navigate = useNavigate();
   const [imagePreview, setImagePreview] = useState(null);
 
   const handleLogout = () => {
-    navigate("/dashboard"); 
+    navigate("/home-admin"); 
   };
 
   const handleFileChange = (event) => {
@@ -26,7 +25,7 @@ export default function ProfilPage() {
     <section className="flex flex-col min-h-screen bg-white">
       {/* Navbar */}
       <nav className="flex justify-between items-center p-6 bg-white">
-        <span className="font-bold pl-24 text-lg">Profil</span>
+        <span className="font-bold pl-24 text-lg">Profil Admin</span>
         <button
           className="text-black pr-24 font-bold text-lg"
           onClick={handleLogout}
@@ -38,7 +37,7 @@ export default function ProfilPage() {
       {/* Konten utama */}
       <div className="flex flex-grow justify-center items-center p-4">
         <div className="w-full max-w-5xl p-11 border border-gray-300 rounded-lg shadow-md flex flex-col md:flex-row items-center">
-          {/* Bagian profil */}
+          {/* Bagian profil admin*/}
           <div className="flex flex-col items-center w-full md:w-1/3 space-y-4">
             <div className="w-40 h-40 flex justify-center items-center rounded-lg border border-gray-400 bg-gray-200">
               {imagePreview ? (
@@ -82,16 +81,11 @@ export default function ProfilPage() {
             </div>
           </div>
 
-          {/* Form untuk pengeditan profil */}
+          {/* Form untuk pengeditan profil admin*/}
           <div className="w-full md:w-2/3 mt-8 md:mt-0">
-            <FormEditProfil />
+            <FormEditProfilAdmin />
           </div>
         </div>
-      </div>
-
-      {/* Footer */}
-      <div className="bg-black text-white py-12">
-        <Footer />
       </div>
     </section>
   );

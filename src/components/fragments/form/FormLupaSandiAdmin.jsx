@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Mail, CheckCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";  
 
-export default function FormLupaSandi() {
+export default function FormLupaSandiAdmin() {
   const [email, setEmail] = useState("");
   const [verificationCode, setVerificationCode] = useState("");
   const [isCodeSent, setIsCodeSent] = useState(false);
@@ -27,7 +27,6 @@ export default function FormLupaSandi() {
       return;
     }
 
-    
     console.log("Kode verifikasi dikirim ke:", email);
     setIsCodeSent(true);
     setErrors({ email: "", verificationCode: "" });
@@ -46,7 +45,6 @@ export default function FormLupaSandi() {
       return;
     }
 
-    
     console.log("Kode berhasil diverifikasi:", verificationCode);
     setErrors({ email: "", verificationCode: "" });
   };
@@ -59,8 +57,7 @@ export default function FormLupaSandi() {
       return;
     }
 
-    
-    navigate("/sandi-baru"); 
+    navigate("/sandibaru-admin"); 
   };
 
   return (

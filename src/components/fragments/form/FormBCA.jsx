@@ -42,9 +42,9 @@ export default function FormBCA() {
   ];
 
   const getTabCount = (tab) => {
-    if (tab === "Semua") return 1; // Hanya 1 produk di tab "Semua"
-    if (tab === "Sedang Dikemas") return 0; // Tidak ada produk untuk tab "Sedang Dikemas"
-    if (tab === "Belum Bayar") return 1; // Hanya 1 produk di tab "Belum Bayar"
+    if (tab === "Semua") return 1; 
+    if (tab === "Sedang Dikemas") return 0; 
+    if (tab === "Belum Bayar") return 1; 
     return orders.filter((order) => order.status === tab).length;
   };
 

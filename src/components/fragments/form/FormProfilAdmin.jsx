@@ -4,16 +4,15 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-export default function FormProfil() {
-  const [name, setName] = useState("Dara");
-  const [email, setEmail] = useState("daraaa@gmail.com");
-  const [phone, setPhone] = useState("082269725839");
-  const [address, setAddress] = useState("Jln. Purnama asri RT 13 Blok A14");
+export default function FormProfilAdmin() {
+  const [name, setName] = useState("Itok");
+  const [email, setEmail] = useState("itok10@gmail.com");
+  const [phone, setPhone] = useState("08334478782");
 
   const navigate = useNavigate();
 
   const handleNavigate = () => {
-    navigate("/edit-profil");
+    navigate("/editprofil-admin"); 
   };
 
   return (
@@ -30,7 +29,7 @@ export default function FormProfil() {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            disabled
+            disabled 
             className="flex-1 border-gray-400 rounded-lg"
           />
         </div>
@@ -64,28 +63,13 @@ export default function FormProfil() {
             className="flex-1 border-gray-400 rounded-lg"
           />
         </div>
-
-        {/* Alamat */}
-        <div className="flex items-center">
-          <Label htmlFor="address" className="text-gray-700 font-medium w-32">
-            Alamat
-          </Label>
-          <Input
-            id="address"
-            type="text"
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-            disabled
-            className="flex-1 border-gray-400 rounded-lg"
-          />
-        </div>
       </div>
 
       {/* Tombol Simpan */}
       <div className="flex justify-end space-x-4 mt-6">
         <Button
           className="bg-black text-white py-2 px-6 rounded-lg"
-          onClick={handleNavigate}
+          onClick={handleNavigate} 
         >
           Perbarui Profil
         </Button>

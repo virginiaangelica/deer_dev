@@ -6,9 +6,9 @@ import { Label } from "@/components/ui/label";
 import { FaUser, FaEnvelope, FaEye, FaEyeSlash } from "react-icons/fa";
 import Swal from "sweetalert2";
 
-export default function FormEditProfil() {
-  const [name, setName] = useState("Dara");
-  const [email, setEmail] = useState("daraaa@gmail.com");
+export default function FormEditProfilAdmin() {
+  const [name, setName] = useState("Itok");
+  const [email, setEmail] = useState("itok10@gmail.com");
   const [file, setFile] = useState(null);
   const [passwordVisible, setPasswordVisible] = useState(false);
 
@@ -38,7 +38,7 @@ export default function FormEditProfil() {
           icon: "success",
           confirmButtonColor: "#3085d6",
         }).then(() => {
-          navigate("/dashboard"); 
+          navigate("/home-admin"); 
         });
       }
     });
